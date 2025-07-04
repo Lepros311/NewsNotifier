@@ -1,11 +1,10 @@
-# TimerTrigger - C<span>#</span>
+# Weather Notifier
 
-The `TimerTrigger` makes it incredibly easy to have your functions executed on a schedule. This sample demonstrates a simple use case of calling your function every 5 minutes.
+This is the second web scraper project I've done. It scrapes the local weather from Weather.com and emails it to me daily each morning. This is an Azure Functions project. It's the second time I've used Microsoft Azure and the Azure Functions portal to deploy and monitor an app. 
 
-## How it works
+## Requirements
 
-For a `TimerTrigger` to work, you provide a schedule in the form of a [cron expression](https://en.wikipedia.org/wiki/Cron#CRON_expression)(See the link for full details). A cron expression is a string with 6 separate expressions which represent a given schedule via patterns. The pattern we use to represent every 5 minutes is `0 */5 * * * *`. This, in plain text, means: "When seconds is equal to 0, minutes is divisible by 5, for any hour, day of the month, month, day of the week, or year".
-
-## Learn more
-
-<TODO> Documentation
+- [x] Read data from a website once a day and send it to a specific e-mail address.
+- [x] You don't need any interaction with the program. It will be a service that runs automatically.
+- [x] The data is collected from Weather.com
+- [x] Use the Agility Pack library for scraping.
