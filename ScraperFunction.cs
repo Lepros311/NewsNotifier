@@ -52,7 +52,7 @@ public class ScraperFunction
             emailBody.Append($"<p style='margin:10px 0;'>for {DateTime.Now.ToString("D", CultureInfo.CurrentCulture)}</p>");
             emailBody.Append("</td></tr>");
 
-            emailBody.Append($"<tr><td style='padding:10px;'>High / Low</td><td style='padding:10px;'>{highLowNode?[0]?.InnerText} / {highLowNode?[1]?.InnerText}</td></tr>");
+            emailBody.Append($"<tr><td style='padding:10px;'>High / Low</td><td style='padding:10px;'>{highLowNode?[1]?.InnerText} / {highLowNode?[0]?.InnerText}</td></tr>");
             emailBody.Append($"<tr><td style='padding:10px;'>Wind</td><td style='padding:10px;'>{windNode?.InnerText ?? "N/A"}</td></tr>");
             emailBody.Append($"<tr><td style='padding:10px;'>Humidity</td><td style='padding:10px;'>{humidityNode?.InnerText ?? "N/A"}</td></tr>");
             emailBody.Append($"<tr><td style='padding:10px;'>Dew Point</td><td style='padding:10px;'>{dewPointNode?.InnerText ?? "N/A"}</td></tr>");
