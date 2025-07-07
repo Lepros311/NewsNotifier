@@ -16,14 +16,14 @@ public class ScraperFunction
     }
 
     [Function("ScraperFunction")]
-    public async Task Run([TimerTrigger("0 0 12 * * *")] TimerInfo myTimer)
+    public async Task Run([TimerTrigger("%CRON_EXPRESSION%")] TimerInfo myTimer)
     {
         _logger.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
 
         try
         {
             // Scrape data from the website
-            var url = "https://weather.com/weather/today/l/686b8c83227cb34166311be5e79f7f500d6554e3b79cd71d06cc3969c2ff7f27";
+            var url = Environment.GetEnvironmentVariable("SCRAPER_URL");
             var httpClient = new HttpClient();
             var html = await httpClient.GetStringAsync(url);
             var htmlDoc = new HtmlDocument();
